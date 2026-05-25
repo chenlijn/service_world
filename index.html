@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Travel Restrictions to Canada Checker | Fast Canada Entry Checklist</title>
+    <meta
+      name="description"
+      content="Check travel restrictions to Canada with a fast checklist for passport, visa or eTA, recent affected-country travel, route type, and official Canada or U.S. verification links."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="Travel Restrictions to Canada Checker" />
+    <meta
+      property="og:description"
+      content="A practical one-page checker for Canada travel documents, route risks, and current official links."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://chenlijn.github.io/money-earner/" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Travel Restrictions to Canada Checker",
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "Any",
+        "description": "A lightweight checklist tool for people searching travel restrictions to Canada.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do I need a visa or eTA to travel to Canada?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It depends on your passport, status, and how you enter Canada. This page links to the official Government of Canada visa and eTA checker."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are Ebola-related rules about Canada or the United States?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Recent Ebola-related arrival rules are U.S. rules for U.S.-bound travelers with recent presence in DRC, Uganda, or South Sudan. Travelers should verify current CDC and DHS guidance before departure."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="topbar" aria-label="Site header">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true">TC</span>
+        <span>TravelCheck</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#checker">Checker</a>
+        <a href="#official-links">Official links</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="kicker">Last checked: May 25, 2026</p>
+          <h1>Travel Restrictions to Canada Checker</h1>
+          <p class="lede">
+            Get a quick, practical checklist for Canada entry documents, route issues, and recent
+            public-health travel rules before you book or board.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#checker">Start check</a>
+            <a class="button ghost" href="#official-links">Verify official sources</a>
+          </div>
+        </div>
+        <div class="route-board" aria-label="Route status preview">
+          <div class="route-line">
+            <span>Passport</span>
+            <strong id="preview-passport">Needed</strong>
+          </div>
+          <div class="route-line">
+            <span>Visa / eTA</span>
+            <strong id="preview-document">Check</strong>
+          </div>
+          <div class="route-line alert">
+            <span>Recent affected-country travel</span>
+            <strong id="preview-health">Ask airline</strong>
+          </div>
+          <div class="route-line">
+            <span>Official verification</span>
+            <strong>Required</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="tool-band" id="checker">
+        <div class="section-head">
+          <p class="kicker">One-minute tool</p>
+          <h2>Build your travel checklist</h2>
+        </div>
+
+        <div class="tool-layout">
+          <form class="checker" id="travel-form">
+            <label>
+              Passport or status
+              <select id="traveler-status">
+                <option value="us-citizen">U.S. citizen</option>
+                <option value="canadian">Canadian citizen or permanent resident</option>
+                <option value="visa-exempt">Visa-exempt foreign national</option>
+                <option value="visa-required">Visa-required foreign national</option>
+                <option value="unknown">Not sure</option>
+              </select>
+            </label>
+
+            <label>
+              How are you entering Canada?
+              <select id="entry-method">
+                <option value="air">Flying to a Canadian airport</option>
+                <option value="land">Land border</option>
+                <option value="marine">Marine border</option>
+                <option value="transit">Transiting through Canada</option>
+              </select>
+            </label>
+
+            <label>
+              Final destination
+              <select id="destination">
+                <option value="canada">Canada</option>
+                <option value="us-via-canada">United States via Canada</option>
+                <option value="other-via-canada">Another country via Canada</option>
+              </select>
+            </label>
+
+            <fieldset>
+              <legend>In the past 21 days, were you in any of these countries?</legend>
+              <label class="check">
+                <input type="checkbox" name="affected" value="drc" />
+                Democratic Republic of the Congo
+              </label>
+              <label class="check">
+                <input type="checkbox" name="affected" value="uganda" />
+                Uganda
+              </label>
+              <label class="check">
+                <input type="checkbox" name="affected" value="south-sudan" />
+                South Sudan
+              </label>
+            </fieldset>
+
+            <label>
+              Travel timing
+              <select id="timing">
+                <option value="today">Today or tomorrow</option>
+                <option value="week">Within 7 days</option>
+                <option value="later">More than 7 days away</option>
+              </select>
+            </label>
+
+            <button class="button primary full" type="submit">Update checklist</button>
+          </form>
+
+          <aside class="results" aria-live="polite">
+            <div class="result-top">
+              <p class="kicker">Your result</p>
+              <h3 id="result-title">Ready for a quick check</h3>
+            </div>
+            <ul id="checklist"></ul>
+            <div class="copy-row">
+              <button class="button secondary" id="copy-result" type="button">Copy checklist</button>
+              <span id="copy-status" role="status"></span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="content-grid" id="official-links">
+        <article>
+          <p class="kicker">Official links</p>
+          <h2>Verify before travel</h2>
+          <p>
+            Travel rules can change quickly. Use this page as a fast sorting layer, then confirm
+            with the government source that controls your route.
+          </p>
+        </article>
+        <div class="link-list">
+          <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/check-visa-eta.html">
+            Canada visa or eTA checker
+          </a>
+          <a href="https://travel.gc.ca/returning">
+            Travel.gc.ca: return or travel to Canada
+          </a>
+          <a href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/canada-travel-advisory.html">
+            U.S. State Department Canada advisory
+          </a>
+          <a href="https://www.cdc.gov/ebola/situation-summary/index.html">
+            CDC Ebola situation summary
+          </a>
+          <a href="https://www.cdc.gov/viral-hemorrhagic-fevers/travel-to-us/index.html">
+            CDC U.S. arrival guidance for affected countries
+          </a>
+        </div>
+      </section>
+
+      <aside class="ad-slot" aria-label="Advertisement">
+        <span>Advertisement</span>
+        <strong>Ad network slot</strong>
+      </aside>
+
+      <section class="faq" id="faq">
+        <div class="section-head">
+          <p class="kicker">FAQ</p>
+          <h2>Common Canada travel restriction questions</h2>
+        </div>
+        <details>
+          <summary>Is this an official Canada travel restrictions tool?</summary>
+          <p>No. It is a practical checklist that points you to official Canada, CDC, and U.S. travel sources.</p>
+        </details>
+        <details>
+          <summary>Why does the tool ask about DRC, Uganda, and South Sudan?</summary>
+          <p>
+            Current U.S. Ebola-related travel measures mention recent presence in those countries.
+            This matters most when your final destination is the United States or your itinerary is
+            handled by a U.S.-bound carrier.
+          </p>
+        </details>
+        <details>
+          <summary>What should I do if I travel today?</summary>
+          <p>
+            Check official sources, call the airline, and confirm your entry document before leaving
+            for the airport or border.
+          </p>
+        </details>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        TravelCheck is an independent checklist page. It does not provide legal, immigration, or
+        medical advice.
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

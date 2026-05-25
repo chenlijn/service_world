@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chenlijn.github.io/money-earner/sitemap.xml
